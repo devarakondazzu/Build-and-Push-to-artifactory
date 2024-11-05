@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    tools{
+        maven'maven3'
+    }
+    
+    stages {
+        stage('git clone the code') {
+            steps {
+                git branch: 'main', credentialsId: 'shafi', url: 'https://github.com/devarakondazzu/maven-web-app-project-kk-funda.git'
+            }
+        }
+        stage('build the code') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        stage('Depoly the war file in tomcat') {
+            steps {
+                deploy adapters: [tomcat7(credentialsId: 'dshafi', path: '', url: 'http://54.235.50.184:8080/')], contextPath: 'war', war: '**/*.war'
+            }
+        }
+    }
+    options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '2')
+}
+}
