@@ -1,0 +1,23 @@
+pipeline{
+    agent any
+    tools{
+        maven'maven3'
+    }
+    stages{
+        stage('git clone the code'){
+            steps{
+            git credentialsId: 'shafi', url: 'https://github.com/devarakondazzu/Build-and-Push-to-artifactory.git'
+            }
+        }
+        stage('bliud the code'){
+            steps{
+                sh 'mvn clean install'
+            }
+        }
+        stage('Depoly rhe application in tomcat'){
+            steps{
+                deploy adapters: [tomcat7(credentialsId: 'dshafi', path: '', url: 'http://98.81.233.101:8080/')], contextPath: 'war', war: '**/*.war'
+            }
+        }
+    }
+}
