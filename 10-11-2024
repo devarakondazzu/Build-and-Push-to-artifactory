@@ -19,5 +19,8 @@ pipeline{
                 deploy adapters: [tomcat7(credentialsId: 'dshafi', path: '', url: 'http://98.81.233.101:8080/')], contextPath: 'war', war: '**/*.war'
             }
         }
+       options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '2', numToKeepStr: '2')
+}
     }
 }
