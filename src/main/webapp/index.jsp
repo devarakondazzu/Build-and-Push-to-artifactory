@@ -1,29 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Welcome</title>
-<link rel="stylesheet" href="style.css"> 
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Welcome to Our Website</h1>
-        <p>This is the homepage of our application.</p>
+<div class="w3-container w3-green">
+  <h1>W3Schools Demo</h1>
+  <p>Resize this responsive page!</p>
+</div>
 
-        <ul>
-            <li><a href="about.jsp">About Us</a></li>
-            <li><a href="products.jsp">Products</a></li>
-            <li><a href="contact.jsp">Contact</a></li>
-        </ul>
+<div class="w3-row-padding">
+  <div class="w3-third">
+    <h2>London</h2>
+    <p>London is the capital city of England.</p>
+    <p>It is the most populous city in the United Kingdom,
+    with a metropolitan area of over 13 million inhabitants.</p>
+  </div>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-           Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="w3-third">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p>
+    <p>The Paris area is one of the largest population centers in Europe,
+    with more than 12 million inhabitants.</p>
+  </div>
 
-    </div>
+  <div class="w3-third">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    <p>It is the center of the Greater Tokyo Area,
+    and the most populous metropolitan area in the world.</p>
+  </div>
+</div>
 
 </body>
 </html>
